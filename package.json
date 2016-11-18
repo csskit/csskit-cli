@@ -3,6 +3,9 @@
   "version": "1.0.1",
   "description": "command-line tool for working with csskit & other modular, functional css",
   "main": "index.js",
+  "bin": {
+    "csskit": "index.js"
+  },
   "scripts": {
     "test": "node tests/*.js"
   },
