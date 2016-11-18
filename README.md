@@ -6,7 +6,7 @@ Command-line tool for working with csskit & other modular, functional css.
 [![standard][standard-image]][standard-url]
 [![conduct][conduct]][conduct-url]
 
-[npm-image]: https://img.shields.io/npm/v/cli.svg?style=flat-square
+[npm-image]: https://img.shields.io/npm/v/csskit-cli.svg?style=flat-square
 [npm-url]: https://www.npmjs.com/package/csskit-cli
 [standard-image]: https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat-square
 [standard-url]: http://npm.im/standard
