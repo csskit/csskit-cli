@@ -6,7 +6,15 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ## Unreleased
 
+* ???
+
+## v1.0.2
+
+### Added
 * added a change log
+
+### Fixed
+* fixed the bin field in package.json
 
 ## v1.0.1
 
