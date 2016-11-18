@@ -1,0 +1,36 @@
+{
+  "name": "csskit-cli",
+  "version": "1.0.0",
+  "description": "command-line tool for working with csskit & other modular, functional css",
+  "main": "index.js",
+  "scripts": {
+    "test": "node tests/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/csskit/csskit-cli.git"
+  },
+  "keywords": [
+    "css",
+    "csskit",
+    "modular",
+    "css",
+    "functional",
+    "css",
+    "css",
+    "bundler"
+  ],
+  "author": "sethvincent",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/csskit/csskit-cli/issues"
+  },
+  "homepage": "https://github.com/csskit/csskit-cli#readme",
+  "dependencies": {
+    "postcss": "^5.2.5",
+    "postcss-css-variables": "^0.6.0",
+    "postcss-cssnext": "^2.8.0",
+    "postcss-import": "^8.2.0",
+    "subcommand": "^2.0.4"
+  }
+}
