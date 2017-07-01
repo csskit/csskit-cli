@@ -8,6 +8,18 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 * ???
 
+## v1.1.0
+
+### Added
+* add `watch` command
+* add `--minify` option
+* add `require('csskit')` js api
+
+## v1.0.3
+
+### Fixed
+* package.json cleanup fixes
+
 ## v1.0.2
 
 ### Added

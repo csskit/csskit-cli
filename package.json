@@ -4,10 +4,12 @@
   "description": "command-line tool for working with csskit & other modular, functional css",
   "main": "index.js",
   "bin": {
-    "csskit": "index.js"
+    "csskit": "bin/index.js"
   },
   "scripts": {
-    "test": "node tests/*.js"
+    "lint": "standard",
+    "test:only": "node tests/*.js",
+    "test": "npm run lint && npm run test:only"
   },
   "repository": {
     "type": "git",
@@ -27,9 +29,15 @@
   },
   "homepage": "https://github.com/csskit/csskit-cli#readme",
   "dependencies": {
-    "postcss": "^5.2.5",
-    "postcss-cssnext": "^2.8.0",
-    "postcss-import": "^8.2.0",
-    "subcommand": "^2.0.4"
+    "chokidar": "^1.7.0",
+    "postcss": "^6.0.4",
+    "postcss-cssnext": "^2.11.0",
+    "postcss-import": "^10.0.0",
+    "subcommand": "^2.1.0"
+  },
+  "devDependencies": {
+    "standard": "^10.0.2",
+    "tap-spec": "^4.1.1",
+    "tape": "^4.6.3"
   }
 }
