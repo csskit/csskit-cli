@@ -11,11 +11,11 @@ Command-line tool for working with csskit & other modular, functional css.
 [standard-image]: https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat-square
 [standard-url]: http://npm.im/standard
 [conduct]: https://img.shields.io/badge/code%20of%20conduct-contributor%20covenant-green.svg?style=flat-square
-[conduct-url]: CONDUCT.md
+[conduct-url]: CODE_OF_CONDUCT.md
 
 ## About
 
-The csskit command-line tool is used for bundling css modules 
+The csskit command-line tool is used for bundling css modules
 
 ## Install
 
@@ -28,11 +28,26 @@ npm install --save-dev csskit-cli
 ```
 USAGE:
   csskit {command} [options]
+
 COMMANDS:
-  bundle,    bundle up some css and its dependencies
-  help,      show this help message
+  bundle     bundle up some css and its dependencies
+  watch      same as bundle, watches css files for changes and rebundles
+  help       show this help message
+
 BUNDLE
   csskit bundle input.css > bundle.css
+
+  Options:
+    --minify, -m      minify using npmjs.com/cssnano
+    --output, -o      specify an output file for the bundled css
+
+WATCH
+  csskit watch input.css > bundle.css
+
+  Options:
+    --minify, -m      minify using npmjs.com/cssnano
+    --output, -o      specify an output file for the bundled css
+
 HELP
   csskit help
 ```
@@ -43,7 +58,7 @@ Contributions are welcome! Please read the [contributing guidelines](CONTRIBUTIN
 
 ## Conduct
 
-It is important that this project contributes to a friendly, safe, and welcoming environment for all. Read this project's [code of conduct](CONDUCT.md)
+It is important that this project contributes to a friendly, safe, and welcoming environment for all. Read this project's [code of conduct](CODE_OF_CONDUCT.md)
 
 ## Changelog
 

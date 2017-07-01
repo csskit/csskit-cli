@@ -1,28 +1,28 @@
 var usage = `
-  USAGE:
-    csskit {command} [options]
+USAGE:
+  csskit {command} [options]
 
-  COMMANDS:
-    bundle     bundle up some css and its dependencies
-    watch      same as bundle, watches css files for changes and rebundles
-    help       show this help message
+COMMANDS:
+  bundle     bundle up some css and its dependencies
+  watch      same as bundle, watches css files for changes and rebundles
+  help       show this help message
 
-  BUNDLE
-    csskit bundle input.css > bundle.css
+BUNDLE
+  csskit bundle input.css > bundle.css
 
-    Options:
-      --minify, -m      minify using npmjs.com/cssnano
-      --output, -o      specify an output file for the bundled css
+  Options:
+    --minify, -m      minify using npmjs.com/cssnano
+    --output, -o      specify an output file for the bundled css
 
-  WATCH
-    csskit watch input.css > bundle.css
+WATCH
+  csskit watch input.css > bundle.css
 
-    Options:
-      --minify, -m      minify using npmjs.com/cssnano
-      --output, -o      specify an output file for the bundled css
+  Options:
+    --minify, -m      minify using npmjs.com/cssnano
+    --output, -o      specify an output file for the bundled css
 
-  HELP
-    csskit help
+HELP
+  csskit help
 `
 
 module.exports = {
