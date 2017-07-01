@@ -15,7 +15,7 @@ Command-line tool for working with csskit & other modular, functional css.
 
 ## About
 
-The csskit command-line tool is used for bundling css modules
+The csskit command-line tool is used for bundling css modules based on [postcss](https://npmjs.com/postcss) and [cssnano](https://npmjs.com/cssnano).
 
 ## Install
 
