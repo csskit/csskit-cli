@@ -6,7 +6,8 @@ var match = subcommand({
   none: require('./commands/help').command,
   commands: [
     require('./commands/help'),
-    require('./commands/bundle')
+    require('./commands/bundle'),
+    require('./commands/watch')
   ]
 })
 
