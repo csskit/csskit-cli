@@ -1,4 +1,4 @@
-# How to contribute to csskit-cli
+# How to contribute to csskit
 
 ## Prerequisites:
 

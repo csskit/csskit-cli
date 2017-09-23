@@ -9,11 +9,13 @@ module.exports = {
     var css = fs.readFileSync(args.input)
 
     csskit.bundle(css, args, function (err, result) {
+      if (err) return console.log(err)
+
       if (args.output) {
-        fs.writeFileSync(args.output, result.css)
-      } else {
-        console.log(result.css)
+        return fs.writeFileSync(args.output, result.css)
       }
+
+      console.log(result.css)
     })
   },
   options: [

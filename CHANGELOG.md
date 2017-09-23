@@ -8,6 +8,12 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 * ???
 
+## v2.0.0
+
+### Added
+
+- this release merges csskit & csskit-cli and now provides both the command-line tool and the bundled csskit styles
+
 ## v1.1.0
 
 ### Added

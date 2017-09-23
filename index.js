@@ -1,4 +1,6 @@
 var postcss = require('postcss')
+var cssnext = require('postcss-cssnext')
+var postcssImport = require('postcss-import')
 
 var watcher = require('./lib/watch')
 
@@ -22,8 +24,8 @@ module.exports = function csskit (config) {
   **/
   function bundle (css, options, callback) {
     var plugins = [
-      require('postcss-import'),
-      require('postcss-cssnext')
+      postcssImport,
+      cssnext({ warnForDuplicates: false })
     ]
 
     if (options.minify) {
@@ -50,13 +52,21 @@ module.exports = function csskit (config) {
   * @param {function} callback called when bundle is ready
   **/
   function watch (css, options, callback) {
-    var watchFiles = ['*.css', '**/*.css']
-    if (options.input) watchFiles.push(options.input)
-    var watchOptions = { ignored: options.output }
     var onChange = options.onChange
 
-    watcher(watchFiles, watchOptions, function (changedFile, event) {
-      css = onChange(changedFile, event)
+    var watchOptions = {
+      ignored: options.output,
+      files: ['*.css', '**/*.css']
+    }
+
+    if (options.input) {
+      watchOptions.files.push(options.input)
+    }
+
+    bundle(css, options, callback)
+
+    watcher(options.input, watchOptions, function (changedFile) {
+      css = onChange(changedFile)
       bundle(css, options, callback)
     })
   }

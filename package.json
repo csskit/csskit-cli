@@ -1,19 +1,21 @@
 {
-  "name": "csskit-cli",
+  "name": "csskit",
   "version": "1.1.1",
-  "description": "command-line tool for working with csskit & other modular, functional css",
+  "description": "styles and command-line tool for modular, functional css",
   "main": "index.js",
+  "style": "style.css",
   "bin": {
     "csskit": "bin/index.js"
   },
   "scripts": {
     "lint": "standard",
     "test:only": "node tests/*.js",
-    "test": "npm run lint && npm run test:only"
+    "test": "npm run lint && npm run test:only",
+    "bundle": "./bin/index.js bundle source.css -o style.css"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/csskit/csskit-cli.git"
+    "url": "git+https://github.com/csskit/csskit.git"
   },
   "keywords": [
     "css",
@@ -25,15 +27,19 @@
   "author": "sethvincent",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/csskit/csskit-cli/issues"
+    "url": "https://github.com/csskit/csskit/issues"
   },
-  "homepage": "https://github.com/csskit/csskit-cli#readme",
+  "homepage": "https://github.com/csskit/csskit#readme",
   "dependencies": {
-    "chokidar": "^1.7.0",
-    "cssnano": "^3.10.0",
+    "anymatch": "^1.3.2",
+    "csskit-base": "^1.0.0",
+    "csskit-button": "^2.0.2",
+    "csskit-form": "^1.0.0",
+    "cssnano": "^4.0.0-rc.2",
     "postcss": "^6.0.4",
     "postcss-cssnext": "^2.11.0",
     "postcss-import": "^10.0.0",
+    "recursive-watch": "^1.1.2",
     "subcommand": "^2.1.0"
   },
   "devDependencies": {
