@@ -26,6 +26,8 @@ The csskit command-line tool is used for bundling css modules based on [postcss]
 npm install --save-dev csskit
 ```
 
+Requires node.js version 8 or higher.
+
 ### Usage
 
 ```
