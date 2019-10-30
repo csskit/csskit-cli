@@ -1,39 +1,41 @@
-var fs = require('fs')
-var csskit = require('../../index')()
+const fs = require('fs')
+const csskit = require('../../index')()
 
-module.exports = {
-  name: 'watch',
-  command: function watch (args) {
-    args.input = args._[0]
+const { output, minify } = require('../flags')
+const { input } = require('../args')
 
-    var css = fs.readFileSync(args.input)
+function command (args, flags, context) {
+  const { input } = args
+  const { output, minify } = flags
 
-    args.onChange = function onChange (changedFile, event) {
-      return fs.readFileSync(args.input)
+  const css = fs.readFileSync(input)
+
+  function onChange (changedFile, event) {
+    return fs.readFileSync(input)
+  }
+
+  csskit.watch(css, { input, minify, onChange }, function (err, result) {
+    if (err) return console.error(err)
+
+    if (output) {
+      fs.writeFileSync(output, result.css)
+    } else {
+      console.log(result.css)
     }
+  })
+}
 
-    csskit.watch(css, args, function (err, result) {
-      if (err) return console.error(err)
+const args = [input]
+const flags = [output, minify]
 
-      if (args.output) {
-        fs.writeFileSync(args.output, result.css)
-      } else {
-        console.log(result.css)
-      }
-    })
-  },
-  options: [
+const options = {
+  description: 'Create a css bundle',
+  examples: [
     {
-      name: 'output',
-      abbr: 'o',
-      default: null,
-      help: 'specify an output file for the bundled css'
-    },
-    {
-      name: 'minify',
-      abbr: 'm',
-      default: null,
-      help: 'minify using npmjs.com/cssnano'
+      cmd: 'csskit bundle style.css > bundle.css',
+      description: 'Create a css bundle from a source css file'
     }
   ]
 }
+
+module.exports = { command, args, flags, options }

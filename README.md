@@ -1,6 +1,6 @@
 # csskit
 
-Styles and command-line tool for modular, functional css.
+A command-line tool for modular, functional css.
 
 [![npm][npm-image]][npm-url]
 [![travis][travis-image]][travis-url]
@@ -16,37 +16,6 @@ Styles and command-line tool for modular, functional css.
 [conduct]: https://img.shields.io/badge/code%20of%20conduct-contributor%20covenant-green.svg?style=flat-square
 [conduct-url]: CODE_OF_CONDUCT.md
 
-
-## Styles
-
-### This package is a bundle of smaller modules:
-
-- [csskit-base](http://npmjs.org/csskit-base)
-- [csskit-form](http://npmjs.org/csskit-form)
-- [csskit-button](http://npmjs.org/csskit-button)
-
-Instead of using this bundle, you could just use each of the modules you need.
-
-### Install
-
-```
-npm i --save csskit
-```
-
-Or just grab the style.css file.
-
-### Usage
-
-If you installed with npm:
-
-- In your main css file: `@import "csskit";`
-- Example using the csskit command-line tool: `csskit main.css -o bundle.css`
-- Alternately you can use a tool like [sheetify](http://npmjs.org/sheetify) or [rework-npm-cli](http://npmjs.org/rework-npm-cli) to bundle the css.
-
-### See the above list of modules for documentation on usage of each module
-
-## Command-line tool
-
 ### About
 
 The csskit command-line tool is used for bundling css modules based on [postcss](https://npmjs.com/postcss) and [cssnano](https://npmjs.com/cssnano).
@@ -60,30 +29,28 @@ npm install --save-dev csskit
 ### Usage
 
 ```
-USAGE:
-  csskit {command} [options]
+Create a css bundle 
 
-COMMANDS:
-  bundle     bundle up some css and its dependencies
-  watch      same as bundle, watches css files for changes and rebundles
-  help       show this help message
+Usage:
+  csskit                                Create a css bundle
 
-BUNDLE
-  csskit bundle input.css > bundle.css
+Args:
+  input                                 (string) 
 
-  Options:
-    --minify, -m      minify using npmjs.com/cssnano
-    --output, -o      specify an output file for the bundled css
+Flags:
+  --output, -o                          specify an output file for the bundled
+                                        css
+  --minify, -m                          minify using npmjs.com/cssnano
 
-WATCH
-  csskit watch input.css > bundle.css
+Examples:
+  csskit style.css > bundle.css         Create a css bundle from a source css
+                                        file
 
-  Options:
-    --minify, -m      minify using npmjs.com/cssnano
-    --output, -o      specify an output file for the bundled css
+Subcommands:
+  csskit bundle                         Create a css bundle
 
-HELP
-  csskit help
+See help for subcommands:
+  csskit [command] --help
 ```
 
 ## Contributing

@@ -1,4 +1,4 @@
-# cli changelog
+# csskit changelog
 
 All notable changes to this project will be documented in this file.
 
@@ -7,6 +7,16 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 ## Unreleased
 
 * ???
+
+## v3.0.0
+
+### Removed
+
+- removed the built-in styles along with csskit-base, csskit-button, csskit-form
+
+### Changed
+
+- switched from postcss-cssnext to postcss-preset-env
 
 ## v2.0.0
 

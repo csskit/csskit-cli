@@ -13,7 +13,7 @@ npm install
 npm test
 ```
 
-`npm test` runs both the linter and the tests.
+`npm test` only runs the tests.
 
 ### Just run the linter
 
@@ -21,8 +21,14 @@ npm test
 npm run lint
 ```
 
-### Only run the tests
+### Automatically fix many lint issues
+
+```
+npm run lintfix
+```
+
+### Run both the tests and the linter
 
 ```sh
-npm run test:no-lint
+npm run test-lint
 ```

@@ -1,14 +1,13 @@
 #! /usr/bin/env node
 
-var subcommand = require('subcommand')
+const path = require('path')
+const directoryCommand = require('directory-command')
 
-var match = subcommand({
-  none: require('./commands/help').command,
-  commands: [
-    require('./commands/help'),
-    require('./commands/bundle'),
-    require('./commands/watch')
-  ]
-})
+const directory = path.join(__dirname, 'commands')
 
-match(process.argv.slice(2))
+const options = {
+  commandName: 'csskit',
+  context: {}
+}
+
+directoryCommand(directory, process.argv.slice(2), options)
